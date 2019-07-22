@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Updates</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Roboto+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="city" type="text" class="get-input" placeholder="Enter a City" required>
+          <input type="submit" class="get-button" value="Get Weather Updates">
+        </form>
+        <% if(weather !== null){ %>
+        <br>
+        <div class="content">
+          <hr>
+          <span class="main"><%= city %></span>
+          <br>
+          <img class="icon" height="70px" src="http://openweathermap.org/img/wn/<%= wi %>@2x.png">
+          <br><span class="main"><%= wm %></span>
+          <br>
+          (<%= wd %>)
+          <br>
+          Max: <%= wmax %> | Current: <%= weather %> | Min: <%= wmin %>
+          <br>
+          Pressure: <%= wp %>mb | Humidity: <%= wh %>% | Cloudiness: <%= wc %>%
+        </div>
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+      <div class="footer">
+        <img src="https://i.imgur.com/a66KAAd.png"><img src="https://i.imgur.com/Al89we4.png"><img src="https://i.imgur.com/9UsbrzX.png"><img src="https://i.imgur.com/3owu9tW.png">
+        <br>
+        <div>
+          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </div>
+        <div>
+          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </div>
+        <div>
+          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </div>
+        <div>
+          Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
