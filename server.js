@@ -4,8 +4,9 @@ const request = require('request');
 const app = express()
 
 // this is the api key
+
 const apiKey = '**************************';
-var ret;
+var retro;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
