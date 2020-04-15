@@ -10,6 +10,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
+
 app.get('/', function (req, res) {
   res.render('index', {weather: null, error: null});
 })
@@ -26,6 +27,7 @@ app.post('/', function (req, res) {
       if(weather.main == undefined){
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {
+        // used to get clouds and all stuff
         let wc = weather.clouds.all;
         res.render('index', {weather: weather.main.temp, wm: weather.weather[0].main, wd: weather.weather[0].description, wi: weather.weather[0].icon, wp: weather.main.pressure, wh: weather.main.humidity, wmax: weather.main.temp_max, wmin: weather.main.temp_min, wc: wc, city: city, error: null});
       }
